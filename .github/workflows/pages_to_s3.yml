@@ -28,4 +28,4 @@ jobs:
         DEST_DIR: 'pages'
       run: |
         echo ${AWS_REGION},
-        echo ${ AWS_REGION }
+        echo ${SOURCE_DIR}
