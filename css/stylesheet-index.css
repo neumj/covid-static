@@ -31,6 +31,13 @@ img.tall {
     padding: 5px;
 }
 
+img.square {
+    width: 70px;
+    height: 70px;
+    border: 0px solid black;
+    padding: 5px;
+}
+
 a:link {
     color: black;
     text-decoration: underline;
