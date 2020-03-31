@@ -13,23 +13,19 @@ jobs:
     #runner type
     runs-on: ubuntu-latest
     
-    #steps
     steps:
-    #uses
     - uses: actions/checkout@master
-    # - uses: jakejarvis/s3-sync-action@master
-    #  with:
-    #    args: --acl public-read --follow-symlinks --delete
-    #runs
-    - name: set envs
+    - uses: jakejarvis/s3-sync-action@master
+      with:
+        args: --acl public-read --follow-symlinks --delete
       env:
         AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         AWS_REGION: 'us-west-2'
         SOURCE_DIR: 'pages'
-        DEST_DIR: 'pages'  
-    - name: echo envs
+        DEST_DIR: 'pages'
+    - name: Run a multi-line script
       run: |
-        echo $AWS_S3_BUCKET,
-        echo $AWS_S3_BUCKET
+        echo Add other actions to build,
+        echo test, and deploy your project.
