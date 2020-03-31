@@ -1,17 +1,18 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Upload to S3
+name: pages_to_s3
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
 on:
   push:
-    branches:
-      - master
+    branches: [ master ]
   
 jobs:
   deploy:
+    #runner type
     runs-on: ubuntu-latest
+    
     steps:
     - uses: actions/checkout@master
     - uses: jakejarvis/s3-sync-action@master
@@ -23,5 +24,4 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         AWS_REGION: 'us-west-2'
         SOURCE_DIR: 'pages'
-        DEST_DIR: 'pages'  
-    run: echo $AWS_S3_BUCKET
+        DEST_DIR: 'pages'
