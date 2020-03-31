@@ -27,5 +27,5 @@ jobs:
         SOURCE_DIR: 'pages'
         DEST_DIR: 'pages'
       run: |
-        echo ${ AWS_S3_BUCKET },
+        echo ${AWS_REGION},
         echo ${ AWS_REGION }
